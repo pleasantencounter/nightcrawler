@@ -35,11 +35,11 @@ Welcome to the Interview Questions Project repository! This project aims to be a
 2. Add service manifest to helm chart that will expose nginx deployment
 3. Deploy helm chart and curl service
 
-## K8s Imperative exercises
+## K8s Imperative exercise
 1. Create pod with name busybox in the namespace interview using image busy box
 2. Check the logs of the pod
 
 
-## K8s Declaritive exerices
+## K8s Declaritive exercise
 1. Create a deployment manifest with the name httpd use the container httpd:latest
 2. Add an init container to the manifest using a python container that prints `hello world`
