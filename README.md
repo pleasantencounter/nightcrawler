@@ -36,3 +36,10 @@ Welcome to the Interview Questions Project repository! This project aims to be a
 3. Deploy helm chart and curl service
 
 ## K8s Imperative exercises
+1. Create pod with name busybox in the namespace interview using image busy box
+2. Check the logs of the pod
+
+
+## K8s Declaritive exerices
+1. Create a deployment manifest with the name httpd use the container httpd:latest
+2. Add an init container to the manifest using a python container that prints `hello world`
