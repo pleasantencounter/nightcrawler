@@ -22,7 +22,7 @@ Welcome to the Interview Questions Project repository! This project aims to be a
 4. Create a new function that returns a string with the following data: temp, temp_min, temp_max, wind speed, and weather description
 5. Print out data above
 
-## Docker execise
+## Docker exercise
 
 1. Create test file with "Hello Worlds!" in the Dockerfile within the `/nginx/files` dir
 2. Build Dockerfile and tag image
