@@ -43,3 +43,7 @@ Welcome to the Interview Questions Project repository! This project aims to be a
 ## K8s Declaritive exercise
 1. Create a deployment manifest with the name httpd use the container httpd:latest
 2. Add an init container to the manifest using a python container that prints `hello world`
+
+## Git exercise
+1. checkout rebase-me branch
+2. rebase branch against main
