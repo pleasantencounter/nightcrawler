@@ -43,6 +43,9 @@ class Weather:
     weather_url = f"http://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid={self.api_key}"
     self.get(weather_url)
 
+  def _rebase_func(self):
+      pass
+
 if __name__ == "__main__":
 
   if not API_KEY:
