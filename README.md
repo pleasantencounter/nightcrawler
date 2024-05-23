@@ -24,7 +24,7 @@ Welcome to the Interview Questions Project repository! This project aims to be a
 
 ## Docker exercise
 
-1. Create test file with "Hello Worlds!" in the Dockerfile within the `/nginx/files` dir
+1. Create test file with "Hello World!" in the Dockerfile within the `/nginx/files` dir
 2. Build Dockerfile and tag image
 3. Run docker image targetport 8080
 4. Access http server on localhost
