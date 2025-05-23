@@ -1,0 +1,39 @@
+Build Image:
+
+Command: `sudo docker build . -t postmortem-hello-world:1.0.8`
+
+Output:
+    `
+    DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+                Install the buildx component to build images with BuildKit:
+                https://docs.docker.com/go/buildx/
+
+    Sending build context to Docker daemon  5.632kB
+    Step 1/6 : ARG NGINX_TAG=1.25.5-alpine-slim
+    Step 2/6 : FROM nginx:${NGINX_TAG}
+    ---> 7d065ef312e2
+    Step 3/6 : USER root
+    ---> Using cache
+    ---> 12663c3936c5
+    Step 4/6 : RUN apk update &&     mkdir -p /nginx/files &&     cd /nginx/files &&     chmod  775 /nginx/files &&     echo "Hello World!" > helloworld.txt
+    ---> Using cache
+    ---> a692f68cc643
+    Step 5/6 : WORKDIR /nginx/files
+    ---> Using cache
+    ---> ab42923d01bc
+    Step 6/6 : COPY nginx.conf /etc/nginx
+    ---> Using cache
+    ---> d9364a929e0b
+    Successfully built d9364a929e0b
+    Successfully tagged postmortem-hello-world:1.0.8
+    `
+
+Run Image: 
+    Command: `sudo docker run -d -p 8080:8080 postmortem-hello-world:1.0.8`
+    OUTPUT: `c2ae858ce2f1a47c22d774cc3007720718478b3d864645deceedb5c9e9b0f1b4`
+
+    Command: `sudo docker ps`
+    OUTPUT:       
+        `CONTAINER ID   IMAGE                          COMMAND                  CREATED         STATUS         PORTS                                               NAMES
+        c2ae858ce2f1   postmortem-hello-world:1.0.8   "/docker-entrypoint.…"   4 seconds ago   Up 3 seconds   80/tcp, 0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   admiring_wu`
+
