@@ -1,0 +1,34 @@
+# MATERIALS REFERENCED
+# USED https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+# USED https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#writing-a-deployment-spec
+# USED https://hub.docker.com/_/httpd
+# USED https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-initialization/
+# USED https://hub.docker.com/_/python
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpd
+  labels:
+    app: httpd
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: httpd
+  template:
+    metadata:
+      labels: 
+        app: httpd
+    spec:
+      initContainers:
+      - name: python-init
+        image: python:3.13-bookworm
+        command: ["python3","-c", "print('hello world')"]
+      containers:
+      - name: httpd
+        image: httpd:latest
+        ports:
+        - containerPort: 80
+   
+
