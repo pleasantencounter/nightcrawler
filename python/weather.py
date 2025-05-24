@@ -53,21 +53,19 @@ class Weather:
      """
      
      printed = []
-     unit_selection = self.args.units.lower()
-
     # Lambda used due to low use 'throwaway' function
     # Chooses string to decorate units with based on the unit specification passed in with the `--units` flag.
     # Returns a dict that contains the unit description strings for both tempurature and speed. 
     # !!! MUST ACCESS THE DICT AT THE CORRECT INDEX FOR THE DECORATOR TYPE !!!  
 
-     unit_str = lambda unit_option: {'standard': {'temp' :'kelvin', 'speed' : 'm/s'},
+     unit_str = lambda : {'standard': {'temp' :'kelvin', 'speed' : 'm/s'},
                              'imperial': {'temp' :'farenheight', 'speed' : 'mph'}, 
                              'metric': {'temp' :'celsius', 'speed' : 'm/s'}
-                             }.get(str(unit_option))
+                             }.get(str(self.args.units.lower()))
 
      #tempurature access and formatting.
      temps_stuff = self.printables['temps_stuff']
-     printed +=  [f"""{printable}: {payload['main'][str(printable)]} degrees {unit_str(unit_selection)['temp']}""" for printable in temps_stuff]
+     printed +=  [f"""{printable}: {payload['main'][str(printable)]} degrees {unit_str()['temp']}""" for printable in temps_stuff]
         
      
     #weather description accessing and formatting
@@ -77,7 +75,7 @@ class Weather:
     #wind speed description accessing and formatting
 
      wind_spd_key = str(self.printables['wind_speed'])
-     printed.append(f"wind {wind_spd_key}: {payload['wind'][wind_spd_key]} {unit_str(unit_selection)['speed']}" )
+     printed.append(f"wind {wind_spd_key}: {payload['wind'][wind_spd_key]} {unit_str()['speed']}" )
 
     #join print payload list and print
      print(", ".join(printed))
