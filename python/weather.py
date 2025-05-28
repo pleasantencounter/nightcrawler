@@ -16,6 +16,11 @@ class Weather:
       self.api_key = API_KEY
       self.session = self._session()
 
+      # Retrieve latitute and longitude
+      latitude, longitude = self._get_coord()
+      self.latitude = latitude
+      self.longitude = longitude
+
   def _session(self) -> requests.Session:
     session = requests.Session()
     session.verify = False
@@ -39,8 +44,8 @@ class Weather:
 
       return latitude, longitude
 
-  def get_daily_weather(self, latitude: str, longitude: str):
-    weather_url = f"http://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid={self.api_key}"
+  def get_daily_weather(self):
+    weather_url = f"http://api.openweathermap.org/data/2.5/weather?lat={self.latitude}&lon={self.longitude}&appid={self.api_key}"
     self.get(weather_url)
 
 if __name__ == "__main__":
@@ -55,5 +60,4 @@ if __name__ == "__main__":
   args = parser.parse_args()
 
   weather = Weather(args)
-  latitude, longitude = weather._get_coord()
-  weather.get_daily_weather(latitude, longitude)
+  weather.get_daily_weather()
