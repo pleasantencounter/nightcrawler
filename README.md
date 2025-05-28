@@ -1,20 +1,23 @@
 # nightcrawler
+
 Welcome to the Interview Questions Project repository! This project aims to be a comprehensive resource for technical interviews.
 
 ## Requirements
-* kubernetes cluster (k3d,minikube,etc..)
-* container runtime (docker,containerd,podman)
-* helm
-* git
-* python
+
+- kubernetes cluster (k3d,minikube,etc..)
+- container runtime (docker,containerd,podman)
+- helm
+- git
+- python
 
 ## Python exercise
 
 **API KEY**: 3b93dbe006af066f0a0db26c13d3a15c
 
 **API DOCS**:
-* https://openweathermap.org/api/geocoding-api
-* https://openweathermap.org/current
+
+- https://openweathermap.org/api/geocoding-api
+- https://openweathermap.org/current
 
 1. Setup python virtual envrionment
 2. Activate virtual env and install `python/requirements` modules
@@ -39,14 +42,17 @@ Welcome to the Interview Questions Project repository! This project aims to be a
 3. Deploy helm chart and curl service
 
 ## K8s Imperative exercise
+
 1. Create pod with name nginx in the namespace `interview` using image `nginx:latest`
 2. Check the logs of the pod
 
 ## K8s Declaritive exercise
-1. Create a deployment manifest with the name httpd use the container httpd:latest
-2. Add an init container to the manifest using a python container that prints `hello world`
+
+1. Create a deployment manifest with the name httpd use the container `httpd:latest`
+2. Add an init container to the manifest that uses the `busybox` image to `echo hello world`
 
 ## Git exercise
+
 1. Create a branch
 2. Commit changes to branch
 3. Run `git log` to check the commit history
