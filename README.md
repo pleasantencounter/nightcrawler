@@ -25,8 +25,8 @@ Welcome to the Interview Questions Project repository! This project aims to be a
 2. Within the virtual environment, install the package requirements file `python/requirements`
 3. Set up an environment variable `OW_API` with the API KEY above as the value
 4. Execute the `python/weather.py` script and resolve any errors
-    1. Errors are printed to stdout as stack traces.
-    2. The script produces a blank output when there are no errors.
+    1. Errors are printed to stdout as stack traces
+    2. The script produces a blank output when there are no errors
     3. You may use print statements for debugging and/or refer to the API docs
 5. Add a new, optional command line argument `--units` to the script for unit of measurement
     1. View the api docs for units
